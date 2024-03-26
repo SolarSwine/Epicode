@@ -13,7 +13,63 @@
             <input type="text" name="username" placeholder="username">
             <br>
             <label for="password">Password</label>
-            <input type="password" name="password" placeholder="password">
+            <input type="password" name="password">
+            <br>
+            <label for="email">inserisci la tua mail</label>
+            <input type="email" name="email">
+            <br>
+            <label for="data">Inserisci una data</label>
+            <input type="date" name="data">
+            <br>
+            <label for="anni">Anni:</label>
+            <input type="number" name="anni" min="0" max="99">
+            <br>
+            <input type="datetime" nome="orario">
+            <br>
+            <label for="CV">Carica il curriculum</label>
+            <input type="file" name="cv">
+            <br>
+            <label for="avanzamento_lavoro">Range:</label>
+            <input type="range" name="range" min="0" max="100" value="10" step="5">
+            <br>
+            <label for="nascosto">campo nascosto</label>
+            <input type="hidden" name="nascosto">
+            <br>
+            <label for="conferma">Comferma</label>
+            <input type="checkbox" name="conferma" checked>
+            <br>
+            <label for="utente ">Inserisci il tuo utente</label>
+            <input type="text" required>
+            <br>
+            <label for="utente premium">passa a premium</label>
+            <Input  type="text" placeholder="passa a premium" disabled></Input>
+            <br>
+            <label for="punteggio">Risultato votazione</label>
+            <input type="text" readonly value="7">
+        </fieldset>
+        <fieldset>
+            <legend>Info ulteriori</legend>
+            <label>Lascia un commento</label>
+            <textarea name="commento" placeholder="Inserisci il tuo commento" cols="30" rows="10"></textarea>
+            <br>
+            <label for="provincia">Scegli la provincia</label>
+            <Select name="provincia">
+                <option value="">---</option>
+                <optgroup label="Lombardia">
+                    <option value="MI">Milano</option>
+                    <option value="VA">Varese</option>
+                    <option value="CO">Como</option>
+                </optgroup>
+                <optgroup Label="Emilia Romagna"> 
+                    <option value="BO">Bologna</option>
+                    <option value="RE">Reggio Emilia</option>
+                </optgroup>
+            </Select>
+            <br>
+            <label for="Domanda_1">Che cos'è il tag body</label>
+            <input type="radio" name="Domanda_1" value="0">è un attributo css
+            <input type="radio" name="Domanda_1" value="0">è un attributo css
+            <input type="radio" name="Domanda_1" value="0">è un attributo css
 
         </fieldset>
          
