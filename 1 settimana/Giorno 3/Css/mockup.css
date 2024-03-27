@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0.8em;
+    }
+
+body {
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif,Helvetica,Verdana,Sans-serif;
+    color: black;
+    font-weight: normal;
+    }
+   
+    .Container
+    {
+    width: 850px;
+    min-width: 850px;
+    margin: 0 auto;
+    border: 1px;
+    padding: 25vw;
+    }
+.intestazione {
+    text-align: center;
+
+}
+    .logo {
+        align-self: auto;
+        width: 25%;
+    }
+    .sottotitolo {
+        text-size-adjust: 1.5 em;
+    }
+ 
+    bold {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    nav{
+        background-color: #FDFBF1;
+        height: 2.5em;
+        border-top: 1px solid #FFDC85;
+        padding-top: 0.8em;
+        color: rgb(2, 2, 114)
+    }
+    nav p{
+        text-align: center;
+        padding: 0.8rem;
+        margin: 0;
+        color: #004D4C;
+        font-size: 10px;
+    }
+h1 {text-align: center;
+    size: 30px;
+    width: 50%; margin-left: 25%;}
+
+
+    dl {
+    list-style-type: none;
+    padding-left: 22px;
+}
+.credits {
+    color: grey;
+    text-align: center;
+}
+
+p bold {color: red}
+
+h2 {
+    border-bottom: 1px solid #3cb9b99d;
+    text-indent: -1em;
+ }
+
+h4 {   text-indent: -2em;}
+
+.featured{
+    border-left: 1px solid #be8f16;
+    margin: 2em
+    text-indent: -2em; }
+ol {
+    padding: 0;
+    margin-left: 2em;
+}
+dl li {
+    text-indent: 0em; 
+    padding: 0; 
+}
+ul li {
+    margin-left: 2em; 
+}
