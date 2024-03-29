@@ -1,12 +1,16 @@
 /* IMPOSTAZIONI GENERALI */
 body, html {
     background-image: url("../img/sfondo.png");
-    background-position: center;
+    background-position: center center;
     height: 100%;
     width: 60%;
     margin: auto;
-    font-size: 22px;
-  }
+    font-size: 16px;
+    font-family: Poppins, 'Helvetica Neue', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    padding: 15px;
+}
 .Uno{    
     background-image: url("../img/sfondo.png");
     background-position: center;
@@ -21,7 +25,7 @@ dl{
     padding: 1 em;
     list-style-type: none;
   }
-
+p{line line-height: 2em;}
 /* HEADER */
 .intestazione{
     text-align: center;
@@ -41,7 +45,7 @@ dl{
 }
 /* MAIN */
 .main{width: 400px;
-    height: 1250px;
+    height: 1600px;
     border: 1px black;
     padding: 2em;
     box-shadow: 5px 7px 10px rgb(4, 4, 26);
