@@ -1,0 +1,47 @@
+p {font-size: 30px;}
+p {font-size: 1em;} /*proporzionale al parent*/
+p {font-size: 1.1rem;} /*proporzionale al root*/
+div {width: 50%; margin-left: 25%;}/*proporzionale al parent*/
+/* vw viewport width 
+   vh viewport height*/
+
+/*esempio*/
+p {font-size: 90%;} /* div 16 -> 14*/
+p {font-size: 0.8em;} /* div 16 -> 12*/
+p {font-size: 0.5rem ;} /* body 16 -> 14*/
+p {font-size: 0.9vw;} /* viewport 400px -> p -> 3.6px*/
+
+/*colori*/
+article p {color: blueviolet;}/*keyword*/
+article p {color: #ff0000;}/*esadecimale*/
+article p {color: #00f;}/*esa sintetico*/
+article p {color: #0f0;}/*esa sintetico*/
+article p {color: #f00;}/*esa sintetico*/
+article p {color: rgb(red0, green0, blue255)}/*3 valori da 0 a 255*/
+article p {color: rgb(red0, green0, blue255, 0.5)}//*rgb + canale alpha (opacità)*/
+
+/*font*/
+section p {font-family: 'Courier New', Courier, monospace;}
+section p {font-family: "Open Sans", sans-serif;}
+#secondo {
+    font-size: 1.1em;
+font-style: italic;/*default: normal*/
+font-weight: bold;/*default: normal*/
+line-height: 1.5;}/*da 0 in su*/
+div p {
+    color: #00f;
+    text-align: justify;/*left, right, center*/
+    text-indent: 2em;/*rientro prima linea*/
+    text-transform: uppercase;
+}
+
+/*aggiungere ombre*/
+div h1 {text-shadow: 4px 4px 12px #666;
+/*  1 orizzontale
+    2 verticale
+    3 spread sfocatura
+    4 colore*/
+}
+
+
+

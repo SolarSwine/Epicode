@@ -1,0 +1,95 @@
+#container {
+    width: 1024px;
+    border: 1px solid #000;
+    margin 0 auto;
+}
+/*
+1valore -> tutti i lati
+2valori -> 1^ soprasotto 2^ detrinistra
+3valori -> 1^sopra 2^ detrinistra 3^ sotto
+4valori -> top right bottom left
++/
+
+/******header******/
+header {
+    background-color: gray;
+    padding: 2em;
+    text-align: center;
+}
+
+header h1 {
+    margin:  0;
+    color: aquamarine;
+}
+
+/******nav******/
+nav {
+    background-color: aquamarine;
+    padding: 10px;
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    float: left;
+    width: 24%;
+    text-align: center;
+    border-right: 1px solid #fff;
+}
+
+#ultimo {border-right: none;}
+nav a {
+    color:black;
+    text-decoration: none;
+    display: block;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: red;
+    background-color: blueviolet;
+}
+
+
+/******* parte centrale *******/
+
+main {padding: 10px}
+.sx {
+    float: left;
+    padding-right: 10px;
+    width: 300px
+}
+
+.dx {
+    float:right;
+    padding-left: 10px;
+    width: 300px;
+}
+
+article p {text-align: justify;}
+
+section {border:1px dotted #000;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ededed;
+}
+
+/******* footer *******/
+
+footer {
+    background-color: grey;
+    text-align: center;
+    border-bottom: 4px solid #00f;
+}
+
+footer p {
+    margin:0;
+    line-height: 2em;
+}
+
+
+
+
