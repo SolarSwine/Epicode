@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = 10 // appartiene all'oggetto globale window -> è accessibile globalemnte
+
+    </script>
+    <p>Nelle funzioni esiste un ambito locale (scope) distinto da quello globale</p>
+    <script>
+        var x ="fuori"           // dichiara x fuori dalla funzione
+        function faiQualcosa(){
+            var x ="dentro"      //dichiara x dentro la funzione
+        }
+        faiQualcosa();           // invocazione
+        console.log(x);           //fuori
+
+        var x = "fuori"
+        function faiQualcosa(){
+            x = "dentro";
+        }
+        console.log(x) // dentro
+        {var x= 2}
+        // x qui è disponibile
+        {let x =2}
+        // x qui non è disponibile
+        /*
+
+    </script>
+    
+</body>
+</html>

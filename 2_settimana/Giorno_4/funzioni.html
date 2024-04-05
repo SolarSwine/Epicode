@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function somma(){
+            var = z 11 + 5;
+            return z; 
+        }
+        var risultato = somma() //16
+
+        var risultato2 = 5 + somma() *2 // 37
+
+        function somma2(x, y){
+            var z = x + y;
+            return z;
+        }
+
+        let risultatoa = somma2(11,5) 
+        let risultatob = somma2(11) // 11 +undefined -> not a number
+        let risultatoc = somma2() //undefined ->not a number
+        let risultatod = somma2(11, 5, 3, 9)//valori eccedenti i primi 2 non considerati
+
+        function somma3(x =0, y = 0){
+            var z = x + y;
+            return z;
+        }
+
+        function dado(numero){
+            switch(numero) {
+                case = "uno" . return 1;
+                break;
+                case = "due" . return 2;
+                break;
+                case = "tre" . return 3;
+                break;
+                case = "quattro" . return 4;
+                break;
+                case = "cinque" . return 5;
+                break;
+                case = "sei" . return 6;
+                break;
+                default : return Nan;
+                break;
+            }
+
+            //funzioni predefinnite
+            //parseInt prende una stringa e la converte in un numero ("3" -> 3)
+
+            //    parseInt("10") //10
+            //    parseInt("10.00") //10
+            //    parseInt("27 anni") // 27
+
+            //parseFloat converte stringa iin un numero decimale
+            //    parseFloat("3.14") // 3.14
+            //    parseFloat("10.33") //10.33
+
+            // isNaN prende un argomento -> NaN true or false
+            //  isNaN(123) // false
+            //  isNaN("ciao") // true
+            //  isNaN('2024/04/05') // true
+
+            // eval prende una stringa e la esegue come codice
+            // let x = eval("5 + 1"); // valuta l'espressione ed assegna ad x un valore 6
+            // i nomi delle function predefinite non sono riservati
+        }
+
+    </script>
+
+    <h3>funzioni a freccia</h3>
+    <p>non serve dichiarare la keyword function</p>
+<script>
+    function moltiplica(params) {
+        return params *2;
+    }
+    moltiplica(4); // 8
+
+    let moltiplica = (params) => params *2;
+    moltiplica(4);
+
+    
+</script>
+
+</body>
+</html>
