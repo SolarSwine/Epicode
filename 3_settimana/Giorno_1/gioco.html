@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gioco</title>
+</head>
+<body>
+    <p>Il colore del testo è <b>black</b></p>
+    <button onclick="myFunction()">Cambia colore</button>
+
+    <script>
+        function myFunction() {
+  var letters = "0123456789ABCDEF";
+  var randomColor = "#";
+  for (var i = 0; i < 6; i++) {
+    randomColor += letters[Math.floor(Math.random() * letters.length)];
+  }
+  var randomColor1 = "#";
+  for (var i = 0; i < 6; i++) {
+    randomColor1 += letters[Math.floor(Math.random() * letters.length)];
+  }
+
+  document.body.style.backgroundColor = randomColor;
+  document.body.style.color = randomColor1;
+}
+    </script>
+    
+</body>
+</html>
