@@ -240,18 +240,18 @@ footer a {
         display:flex;
         flex-direction: row;        
     }
+    
     .affiancare div{
         display:flex;
         flex-direction: row; max-width: 33%;       
     }
-    
-  }
-  
-  @media print {
+}
+
+@media print {
     /* stili ESCLUSIVI per la stampa */
     nav,
     footer {
-      display: none;
+        display: none;
     }
   
     body {
