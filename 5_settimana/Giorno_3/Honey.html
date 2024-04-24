@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Honey</title>
+    <style>
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: space-evenly;
+      }
+
+      nav {
+        background: #fbf7e3;
+        padding: 1em 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      nav ul {
+        margin: 0 0 0 0.5em;
+        list-style: none;
+        display: flex;
+      }
+
+      nav ul li {
+          margin-right: 0.5em; /* 8px */
+          border-radius: 10px;
+          background-color: #f3df85;
+        }
+
+        nav ul li :nth-child(3) {
+            flex-basis: 20%;
+            
+        }
+        
+      nav ul li img{ 
+        max-width: 10px;
+      }
+
+      article.card {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        background-color: #fbf7e3;
+        border-radius: 50px;
+        margin: 0;
+        color: #612406;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .card .text-container {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; 
+        justify-content: space-between;  
+        align-items: center;     
+      }
+
+      .text-container .sinistra {
+  justify-content: flex-start; /* Allinea il contenuto a sinistra */
+  margin: 0;
+}
+
+.text-container .destra {
+  justify-content: flex-end; /* Allinea il contenuto a destra */
+  margin: 0;
+  align-items: center;
+}
+
+     
+        button {
+        width: 50%;
+        margin-bottom: 1em;
+        background-color: #f3df85;
+        border: none;
+        border-radius: 10px;
+      }
+
+      section{
+        display: flex;
+      }
+
+      section img {
+        max-width: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <nav>
+            <ul>
+                <li>Our Honey</li>
+                <li>Trace Honey</li>
+                <li><img src="./assets/imgs/logo.png" alt="">SHOP</li>
+                <li>Facilities</li>
+                <li>Contacts</li>
+            </ul>
+        </nav>
+      </header>
+    <main>      
+      <article class="card">
+        <img src="./assets/imgs/honey.jpg" alt="MiELe" />
+        <div class="text-container">
+          <div class="sinistra">
+            <h3>100% Bio Honey</h3>
+            <p>Italian, not treated</p>
+          </div>
+          <div class="destra">
+            <p id="prezzo">7$/kg</p>
+          </div>
+        </div>
+        <button>Add to cart</button>        
+      </article>
+      <article class="card">
+        <img src="./assets/imgs/honey.jpg" alt="MiELe" />
+        <div class="text-container">
+          <div class="sinistra">
+            <h3>100% Bio Honey</h3>
+            <p>Italian, not treated</p>
+          </div>
+          <div class="destra">
+            <p id="prezzo">7$/kg</p>
+          </div>
+        </div>
+        <button>Add to cart</button>        
+      </article>
+      <article class="card">
+        <img src="./assets/imgs/honey.jpg" alt="MiELe" />
+        <div class="text-container">
+          <div class="sinistra">
+            <h3>100% Bio Honey</h3>
+            <p>Italian, not treated</p>
+          </div>
+          <div class="destra">
+            <p id="prezzo">7$/kg</p>
+          </div>
+        </div>
+        <button>Add to cart</button>        
+      </article>
+      <article class="card">
+        <img src="./assets/imgs/honey.jpg" alt="MiELe" />
+        <div class="text-container">
+          <div class="sinistra">
+            <h3>100% Bio Honey</h3>
+            <p>Italian, not treated</p>
+          </div>
+          <div class="destra">
+            <p id="prezzo">7$/kg</p>
+          </div>
+        </div>
+        <button>Add to cart</button>        
+      </article>
+      <section>
+        <img src="./assets/imgs/honey.jpg" alt="Miele">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </section>
+    </main>
+  </body>
+</html>
