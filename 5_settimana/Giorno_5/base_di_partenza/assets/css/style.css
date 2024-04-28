@@ -1,0 +1,251 @@
+
+/* Barra navigazione */
+
+nav {
+    /*position: fixed;
+    top: 0;  Posiziona la barra di navigazione in alto della finestra del browser */
+    width: 100%;
+    background: #fbf7e3;
+    padding: 1em 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: 1px solid #191919;
+    background-color: #ffc017;
+}
+nav img{
+    position: absolute;
+    left: 0;
+    padding-left: 3rem;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 2em 0 0; 
+    list-style: none; 
+    align-self: center;
+}
+
+  nav ul li button {
+    background-color:#ffc017;
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 99em;
+}
+
+#getStarted  {
+    background-color: #191919;  
+    border: 1px solid #191919; 
+    padding: 10px 20px; 
+    border-radius: 99em;    
+    color: white;
+}
+
+
+
+/* Hero section */
+
+.hero {
+    display: flex;
+    position: relative;
+    background-color: #ffc017;
+    border-bottom: 1px solid #191919;
+}
+
+#titolone {
+    padding: 3em;
+    position: relative;
+    overflow: visible;
+}
+
+
+#MMM {
+    position: absolute;
+    right: 0;
+    top: 0;    
+    margin-top: -70px;
+}
+
+h1{
+    font-size: 108px;
+    white-space: nowrap;
+    padding: 10px 0 10px;
+}
+
+.hero p{
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    padding: 10px 0 10px;
+    color: #191919;
+}
+
+.hero button {
+    font-family: "Roboto", sans-serif;
+    padding: 10px 30px;
+    border: 1px solid #191919;
+    border-radius: 30px;
+    background-color: #191919;
+    font-size: 24px;
+    color: white;
+    margin-top: 20px
+}
+
+/* trending */
+
+.trending {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.cards {
+    
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em;
+    border-bottom: 1px solid #9e9e9e;
+}
+
+.card {
+    display:flex;    
+    flex-direction: row;  
+    align-items: center;  
+    justify-content: flex-start;
+    font-family: "Roboto", sans-serif;
+    line-height: 1em;
+    width: 27vw; 
+    margin-bottom: 2em;      
+}
+
+.card p{
+    word-wrap: break-word;
+    align-self: flex-start;
+}
+
+.cards p{
+    display: flex;
+    word-wrap: none;
+    align-self: flex-start;
+}
+.card img {
+    border-radius: 50%;
+    max-width: 22px;
+}
+
+.numeri {
+    color: #E6E7E7;
+    font-size: 2em;
+    padding: 20px;
+    width:3em;
+    align-self: flex-start;
+}
+
+h4{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+h3{
+    position: relative;
+    font-weight: 800;
+    top: 30px;
+    left: 50px;
+    margin-bottom: 20px;
+}
+
+.grey {
+    color: grey;
+}
+
+
+/* main */
+main {
+    display: flex;
+    
+}
+
+article{
+    position: flex ;
+    flex-direction: column;
+    max-width: 60%;
+}
+
+
+.articolo {
+    display: flex;
+    align-items: center; 
+    margin: 50px;
+}
+
+.articolo p img {
+    max-width: 22px;
+}
+
+.articolo > div {
+    flex: 1; 
+    padding-right: 20px; 
+    width: 500px;
+}
+
+.articolo .artImg {
+    order: 1; 
+}
+
+.artImg {
+    max-width: 200px;
+    align-self: flex-end;
+}
+
+h2{
+    font-size: 22px;
+    font-weight: 800;    
+    font-family: "Roboto", sans-serif;
+}
+
+/* Aside */
+
+aside {
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 17px;
+}
+
+#interessi{
+    margin: 20px 0 0 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+#interessi div {    
+    font-size: 22px;
+    display: flex;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    max-width: max-content;
+    margin: 0.5em;
+    padding: 1em;
+}
+
+aside a{
+    display: flex;
+    text-decoration: none;
+    color: grey;
+    padding: 1em;
+    margin-right: 10px;
+
+}
+aside div {
+    display: flex;
+    flex-wrap: wrap;
+}
