@@ -1,34 +1,30 @@
-        // Verifica se c'è un valore di contatore salvato in sessionStorage
-        let counter = sessionStorage.getItem('counter');
-        if (!counter) {
-            // Se non c'è, inizializza il contatore a 0
-            counter = 0;
+let counter = 0;
+
+        // Funzione per aggiornare il contatore ogni secondo
+        function updateCounter() {
+            counter++;
+            document.getElementById('counter').textContent = counter;
+            sessionStorage.setItem('counter', counter);
         }
 
-        // Verifica se la pagina è stata aggiornata utilizzando localStorage
-        let pageRefreshed = localStorage.getItem('pageRefreshed');
-        if (!pageRefreshed) {
-            // Se la pagina non è stata aggiornata, inizia il contatore
-            startCounter();
+        // Controlla se ci sono dati salvati nella sessione
+        const storedCounter = sessionStorage.getItem('counter');
+        if (storedCounter !== null) {
+            // Se ci sono, imposta il contatore al valore salvato
+            counter = parseInt(storedCounter);
+            document.getElementById('counter').textContent = counter;
         }
 
-        // Avvia il contatore ogni secondo
-        function startCounter() {
-            const intervalId = setInterval(() => {
-                // Incrementa il contatore di 1 secondo
-                counter++;
-                // Aggiorna il valore del contatore nel sessionStorage
-                sessionStorage.setItem('counter', counter);
-                // Aggiorna il contatore sul documento HTML
-                document.getElementById('counter').textContent = counter;
-            }, 1000);
-
-            // Memorizza che la pagina è stata aggiornata in localStorage
-            localStorage.setItem('pageRefreshed', true);
-
-            // Gestisci l'evento beforeunload per resettare il localStorage quando la pagina viene chiusa
-            window.addEventListener('beforeunload', () => {
-                // Rimuovi il flag di aggiornamento della pagina da localStorage
-                localStorage.removeItem('pageRefreshed');
-            });
+        // Avvia il contatore solo se non è già stato avviato
+        let intervalId;
+        if (!sessionStorage.getItem('intervalId')) {
+            intervalId = setInterval(updateCounter, 1000);
+            sessionStorage.setItem('intervalId', intervalId);
         }
+
+        // Azzeramento del contatore e pulizia della sessione quando la pagina viene chiusa
+        window.addEventListener('unload', function() {
+            clearInterval(intervalId);
+            sessionStorage.removeItem('counter');
+            sessionStorage.removeItem('intervalId');
+        });
