@@ -61,6 +61,7 @@ document.addEventListener('click', function(event) {
 
   getBooks()
 
+  
 document.addEventListener('click', function(event) {
     if (event.target.id === 'compra-ora') {
       const card = event.target.closest('.card');
