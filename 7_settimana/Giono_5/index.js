@@ -31,12 +31,9 @@ const openBackofficeModal = function (fruitId) {
   const backofficeModal = new bootstrap.Modal(document.getElementById('backofficeModal'));
   backofficeModal.show();
   
-  // Imposta l'URL dell'iframe
+
   const iframe = document.querySelector('#backofficeModal iframe');
   iframe.src = `backoffice.html?fruitId=${fruitId}&modal=true`;
-  // Nascondi la navbar
-  const navbar = document.querySelector('.navbar-main');
-  navbar.style.display = 'none';
 }
 
 // Funzione per ottenere gli eventi (frutta)

@@ -105,7 +105,7 @@ document.getElementById('fruit-form').addEventListener('submit', submitFruit);
 
 
 // funzione ELIMINA
-const deleteEvent = function () {
+const deleteFruit = function () {
   if (confirm("Sei sicuro di voler cancellare questo elemento?")) {
   fetch(`https://striveschool-api.herokuapp.com/api/product/${fruitId}`, {
     method: 'DELETE',
