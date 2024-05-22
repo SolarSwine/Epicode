@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <!-- Sezione per il primo post -->
+  <div *ngIf="postArr.length > 0" class="first-post">
+    <h1>{{ postArr[0].title }}</h1>
+    <p>{{ postArr[0].body }}</p>
+  </div>
+
+  <!-- Sezione per i successivi 4 post -->
+  <div class="related-posts" *ngIf="postArr.length > 1">
+    <h2>Potrebbe anche interessarti...</h2>
+    <div class="related-post" *ngFor="let post of postArr.slice(1, 5)">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body }}</p>
+    </div>
+  </div>
+</div>
