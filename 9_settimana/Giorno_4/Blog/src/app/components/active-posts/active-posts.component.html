@@ -1,0 +1,7 @@
+<div *ngFor="let post of activePosts" class="post">
+  <h2>
+    <a [routerLink]="['/post', post.id]">{{ post.title }}</a>
+  </h2>
+  <p>{{ post.body }}</p>
+  <p><strong>Tags:</strong> {{ post.tags.join(", ") }}</p>
+</div>

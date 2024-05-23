@@ -1,13 +1,5 @@
 import { Component } from '@angular/core';
-
-interface Post {
-  id: number;
-  title: string;
-  body: string;
-  userId: number;
-  tags: string[];
-  active: boolean;
-}
+import { IPost } from '../../interfaces/i-post';
 
 @Component({
   selector: 'app-home',
@@ -16,22 +8,21 @@ interface Post {
 })
 export class HomeComponent {
   apiUrl: string = 'assets/db.json';
-  postArr: Post[] = [];
+  postArr: IPost[] = [];
 
   ngOnInit() {
     this.getPosts();
   }
 
   async getPosts(): Promise<void> {
-    try {
       const response = await fetch(this.apiUrl);
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
       const data = await response.json();
       this.postArr = data.posts;
-    } catch (error) {
-      console.error('There was a problem with the fetch operation:', error);
-    }
+      this.shufflePosts();
   }
-}
+  shufflePosts(): void {
+    for (let i = this.postArr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.postArr[i], this.postArr[j]] = [this.postArr[j], this.postArr[i]];
+    }
+}}
