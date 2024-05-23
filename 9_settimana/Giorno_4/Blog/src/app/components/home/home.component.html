@@ -1,20 +1,24 @@
 <div class="container">
-  <!-- Sezione per il primo post -->
-  <div *ngIf="postArr.length > 0" class="first-post">
-    <h1>
-      <a [routerLink]="['/post', postArr[0].id]">{{ postArr[0].title }}</a>
-    </h1>
-    <p>{{ postArr[0].body }}</p>
+  <!-- Section for the first post -->
+  <div *ngIf="postArr.length > 0" class="card first-post">
+    <div class="card-body">
+      <h1 class="card-title">
+        <a [routerLink]="['/post', postArr[0].id]">{{ postArr[0].title }}</a>
+      </h1>
+      <p class="card-text">{{ postArr[0].body }}</p>
+    </div>
   </div>
 
   <!-- Section for random posts -->
   <div class="related-posts" *ngIf="postArr.length > 1">
     <h2>Potrebbe anche interessarti...</h2>
-    <div class="related-post" *ngFor="let post of postArr.slice(1, 5)">
-      <h2>
-        <a [routerLink]="['/post', post.id]">{{ post.title }}</a>
-      </h2>
-      <p>{{ post.body }}</p>
+    <div class="related-post card" *ngFor="let post of postArr.slice(1, 5)">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a [routerLink]="['/post', post.id]">{{ post.title }}</a>
+        </h2>
+        <p class="card-text">{{ post.body }}</p>
+      </div>
     </div>
   </div>
 </div>
