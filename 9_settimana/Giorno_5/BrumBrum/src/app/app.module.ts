@@ -5,9 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './main-components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
-import { FiatComponent } from './components/fiat/fiat.component';
-import { FordComponent } from './components/ford/ford.component';
-import { AudiComponent } from './components/audi/audi.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { FooterComponent } from './main-components/footer/footer.component';
 
@@ -16,9 +13,6 @@ import { FooterComponent } from './main-components/footer/footer.component';
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    FiatComponent,
-    FordComponent,
-    AudiComponent,
     BrandComponent,
     FooterComponent
   ],
