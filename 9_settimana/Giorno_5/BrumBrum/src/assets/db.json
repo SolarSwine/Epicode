@@ -1,0 +1,56 @@
+[
+  {
+    "brand": "Fiat",
+    "brandLogo": "https://maestramonica.it/wp-content/uploads/2018/01/ordine-crescente.jpg",
+    "model": "500L",
+    "modelImage": "https://i.pinimg.com/originals/85/55/0c/85550c9408f73de182d026cd12efac53.jpg",
+    "year": 2015,
+    "price": 7500,
+    "available": false
+  },
+  {
+    "brand": "Fiat",
+    "brandLogo": "https://maestramonica.it/wp-content/uploads/2018/01/ordine-crescente.jpg",
+    "model": "500 Abarth",
+    "modelImage": "https://m.media-amazon.com/images/I/61jFS7CzIzL.jpg",
+    "year": 2010,
+    "price": 3500,
+    "available": true
+  },
+  {
+    "brand": "Ford",
+    "brandLogo": "https://clipartmag.com/image/ford-drawing-19.png",
+    "model": "Taurus",
+    "modelImage": "https://i.pinimg.com/originals/59/d8/2b/59d82bb2fc8d7d27b6d26986e4fa2865.jpg",
+    "year": 2009,
+    "price": 5200,
+    "available": false
+  },
+  {
+    "brand": "Ford",
+    "brandLogo": "https://clipartmag.com/image/ford-drawing-19.png",
+    "model": "Focus",
+    "modelImage": "https://upload.wikimedia.org/wikipedia/commons/4/42/Lachlan_and_his_Ford_Focus_RS_Hatch-2_%2841293320870%29.jpg",
+    "year": 2014,
+    "price": 9700,
+    "available": true
+  },
+  {
+    "brand": "Audi",
+    "brandLogo": "https://i.pinimg.com/originals/fb/af/58/fbaf583cc02ce790ec89c01ed4a6e952.jpg",
+    "model": "A3",
+    "modelImage": "https://i.pinimg.com/originals/d4/55/cd/d455cd4127047591de9ff7350eb8395e.jpg",
+    "year": 2012,
+    "price": 4300,
+    "available": true
+  },
+  {
+    "brand": "Audi",
+    "brandLogo": "https://i.pinimg.com/originals/fb/af/58/fbaf583cc02ce790ec89c01ed4a6e952.jpg",
+    "model": "Q7",
+    "modelImage": "https://i.pinimg.com/originals/d4/c8/46/d4c8467e694697450a030a31c7172a10.jpg",
+    "year": 2020,
+    "price": 41700,
+    "available": false
+  }
+]

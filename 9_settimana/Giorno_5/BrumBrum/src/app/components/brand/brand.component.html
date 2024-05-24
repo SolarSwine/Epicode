@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Macchinine {{ brandName }}</h1>
+  <div class="row">
+    <div class="col-lg-6" *ngFor="let car of brandCars">
+      <div
+        class="card mb-4"
+        [ngClass]="{ available: car.available, unavailable: !car.available }"
+      >
+        <img
+          [src]="car.modelImage"
+          class="card-img-top"
+          alt="{{ car.model }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ car.brand }} - {{ car.model }}</h5>
+          <span class="card-text"><strong>Anno:</strong> {{ car.year }} </span>
+          <span class="card-text ms-5"
+            ><strong>Prezzo:</strong> ${{ car.price }}
+          </span>
+          <span class="card-text ms-5">
+            <strong> {{ car.available ? "Cell'ho" : "Non cell'ho" }}</strong>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

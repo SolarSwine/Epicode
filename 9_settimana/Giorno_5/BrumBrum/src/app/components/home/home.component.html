@@ -1,0 +1,40 @@
+<div class="container">
+  <!-- Brand Logos -->
+  <h1 class="text-center mb-1">Cuesto è un sito di macchininne!</h1>
+  <div class="row mb-4">
+    <div class="col-lg-4" *ngFor="let logo of brandLogos">
+      <a [routerLink]="['/brand', getBrandNameByLogo(logo)]">
+        <img [src]="logo" class="card-img-top brand-logo" alt="Brand Logo" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Random Cars -->
+  <h2 class="text-center mb-1">Guarda per esempio cueste!</h2>
+  <div class="row">
+    <div class="col-lg-6" *ngFor="let car of randomCars">
+      <div
+        class="card mb-4"
+        [ngClass]="{ available: car.available, unavailable: !car.available }"
+      >
+        <img
+          [src]="car.modelImage"
+          class="card-img-top"
+          alt="{{ car.model }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ car.brand }} - {{ car.model }}</h5>
+          <span class="card-text"><strong>Anno:</strong> {{ car.year }} </span>
+          <span class="card-text ms-5"
+            ><strong>Prezzo:</strong> ${{ car.price }}
+          </span>
+          <a
+            [routerLink]="['/brand', car.brand]"
+            class="btn btn-primary ms-5 text-end"
+            >Vedi la marca</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

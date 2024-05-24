@@ -1,0 +1,23 @@
+<footer class="bg-dark text-white pt-4">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-6 col-md-4 col-lg-2 mb-3"
+        *ngFor="let image of leonardoImages"
+      >
+        <div class="card bg-dark border-0">
+          <img
+            [src]="image.src"
+            [alt]="image.alt"
+            class="card-img-top img-fluid"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <p>&copy; 2024 Leonardo da Vinci | All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
