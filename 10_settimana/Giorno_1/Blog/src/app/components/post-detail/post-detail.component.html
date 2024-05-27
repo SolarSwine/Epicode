@@ -1,0 +1,23 @@
+<div *ngIf="post">
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.body }}</p>
+  <p><strong>Tags:</strong> {{ post.tags.join(", ") }}</p>
+
+  <button (click)="toggleForm()">Edit Post</button>
+
+  <div *ngIf="formVisible">
+    <!-- Proiettiamo il modulo di modifica post -->
+    <ng-content
+      *ngIf="formVisible"
+      [ngTemplateOutlet]="[editPostForm]"
+    ></ng-content>
+    <!-- Modulo di modifica post proiettato tramite ng-content -->
+    <ng-template #editPostForm>
+      <div>
+        <input type="text" [(ngModel)]="post.title" placeholder="Title" />
+        <textarea [(ngModel)]="post.body" placeholder="Body"></textarea>
+        <button (click)="saveChanges()">Save</button>
+      </div>
+    </ng-template>
+  </div>
+</div>
