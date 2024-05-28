@@ -69,6 +69,15 @@
 </div>
 
 <section class="row">
+  <div class="tags">
+    <span
+      class="badge bg-primary me-1"
+      *ngFor="let tag of allTags"
+      (click)="filterPostsByTag(tag)"
+    >
+      {{ tag }}
+    </span>
+  </div>
   <app-single-post
     #singlePost
     *ngFor="let post of posts"
