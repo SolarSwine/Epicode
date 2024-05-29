@@ -1,0 +1,10 @@
+<app-preferiti></app-preferiti>
+<app-carrello></app-carrello>
+
+<div *ngFor="let product of products" class="product">
+  <img [src]="product.thumbnail" alt="{{ product.title }}" />
+  <h2>{{ product.title }}</h2>
+  <p>{{ product.description }}</p>
+  <button (click)="addToFavorites(product)">Add to Favorites</button>
+  <button (click)="addToCart(product)">Add to Cart</button>
+</div>
