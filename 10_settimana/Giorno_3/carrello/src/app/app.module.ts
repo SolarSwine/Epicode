@@ -7,13 +7,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { CarrelloComponent } from './pages/carrello/carrello.component';
 import { PreferitiComponent } from './pages/preferiti/preferiti.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './main-components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CarrelloComponent,
-    PreferitiComponent
+    PreferitiComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

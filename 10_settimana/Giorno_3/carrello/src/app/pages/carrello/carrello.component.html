@@ -1,5 +1,7 @@
-<div *ngFor="let product of cart" class="product">
-  <img [src]="product.thumbnail" alt="{{ product.title }}" />
-  <h2>{{ product.title }}</h2>
-  <p>{{ product.description }}</p>
+<h1>Carrello</h1>
+<div class="product-grid">
+  <div *ngFor="let product of cart" class="product">
+    <img [src]="product.thumbnail" alt="{{ product.title }}" />
+    <h2>{{ product.title }}</h2>
+  </div>
 </div>
