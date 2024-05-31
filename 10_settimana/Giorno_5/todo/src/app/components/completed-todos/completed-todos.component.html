@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div
+        *ngFor="let todo of completedTodos"
+        class="d-flex align-items-center mb-1"
+        [ngClass]="{ completed: todo.completed }"
+      >
+        <input
+          type="checkbox"
+          class="mx-2"
+          [checked]="todo.completed"
+          (change)="updateTodoStatus(todo)"
+        />
+        <span>{{ todo.todo }}</span>
+      </div>
+    </div>
+  </div>
+</div>

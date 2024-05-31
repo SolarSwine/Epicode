@@ -1,0 +1,26 @@
+<div class="col-md-10 mx-auto">
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    placeholder="Search by author"
+    class="mb-3"
+  />
+  <div
+    *ngFor="let todo of filterTodos()"
+    class="d-flex align-items-center mb-2"
+    [ngStyle]="{
+      background: todo.completed
+        ? 'linear-gradient(to right, orange, gold)'
+        : 'linear-gradient(to bottom, blue, purple)',
+      color: todo.completed ? 'black' : 'white'
+    }"
+  >
+    <input
+      type="checkbox"
+      [checked]="todo.completed"
+      (change)="updateTodoStatus(todo)"
+      class="me-2"
+    />
+    <span>{{ todo.todo }} - {{ todo.userName }}</span>
+  </div>
+</div>
