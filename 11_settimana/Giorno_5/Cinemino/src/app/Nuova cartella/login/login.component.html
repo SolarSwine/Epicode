@@ -1,0 +1,10 @@
+<div>
+  <h2>Login</h2>
+  <form (submit)="login(username.value, password.value)">
+    <label for="username">Username:</label>
+    <input type="text" id="username" #username />
+    <label for="password">Password:</label>
+    <input type="password" id="password" #password />
+    <button type="submit">Login</button>
+  </form>
+</div>

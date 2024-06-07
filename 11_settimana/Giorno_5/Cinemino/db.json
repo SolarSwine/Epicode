@@ -1,0 +1,86 @@
+{
+  "users": [
+    {
+      "email": "a@a.a",
+      "password": "$2a$10$b3z3Gll16.EwRxtT5a9PxuwW87subC2E7UqdH7KT47W/f9rJp26eG",
+      "nome": "a",
+      "id": 1
+    },
+    {
+      "email": "a@b.c",
+      "password": "$2a$10$NDNahSdj1m.M6wLeHntPmeZFdbmLmQI4rl3.AunM/pwjorRXV8nPi",
+      "nome": "Mietitrebbia",
+      "id": 2
+    },
+    {
+      "email": "freddy@c.c",
+      "password": "$2a$10$MaUiLbR6PfoLv.nRGnamBuIzUCOpDtMLgxrkr5WMJQRXhskvQ7.qq",
+      "nome": "Freddy",
+      "id": 3
+    },
+    {
+      "email": "kek@tnt.org",
+      "password": "$2a$10$3qjRa1MX1h8EaZmVbILqt.WuOugi03rxNW6DzmcM1TfycK46EmyIK",
+      "nome": "Jay's Son",
+      "id": 4
+    },
+    {
+      "email": "d@d.d",
+      "password": "$2a$10$huhLBa9trTXv65NeEtweP.ouFSr7thR2vzA3hQst/yvsx4Fv/eDEu",
+      "nome": "d",
+      "id": 5
+    }
+  ],
+  "movies-popular": [
+    {
+      "id": 1,
+      "title": "furiosa-a-mad-max-saga",
+      "posterUrl": "https://a.ltrbxd.com/resized/film-poster/7/0/5/2/2/1/705221-furiosa-a-mad-max-saga-0-1000-0-1500-crop.jpg"
+    },
+    {
+      "id": 2,
+      "title": "godzilla-minus-one",
+      "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/4/5/7/0/6/845706-godzilla-minus-one-0-1000-0-1500-crop.jpg"
+    },
+    {
+      "id": 3,
+      "title": "interstellar",
+      "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/7/6/2/1/117621-interstellar-0-1000-0-1500-crop.jpg?"
+    },
+    {
+      "id": 4,
+      "title": "birdman",
+      "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/3/9/7/9/5/139795-birdman-0-1000-0-1500-crop.jpg"
+    }
+  ],
+  "favorites": [
+    {
+      "movieId": 2,
+      "id": 1
+    },
+    {
+      "movieId": 2,
+      "id": 3
+    },
+    {
+      "movieId": 1,
+      "id": 4
+    },
+    {
+      "movieId": 1,
+      "id": 5
+    },
+    {
+      "movieId": 1,
+      "id": 6
+    },
+    {
+      "movieId": 2,
+      "id": 7
+    },
+    {
+      "movieId": 3,
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<div>
+  <h2>Register</h2>
+  <form (submit)="register(username.value, password.value)">
+    <label for="username">Username:</label>
+    <input type="text" id="username" #username />
+    <label for="password">Password:</label>
+    <input type="password" id="password" #password />
+    <button type="submit">Register</button>
+  </form>
+  <div *ngIf="error" class="error">{{ error }}</div>
+</div>
