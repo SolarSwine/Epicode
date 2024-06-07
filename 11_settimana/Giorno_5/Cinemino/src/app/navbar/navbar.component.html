@@ -1,5 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">MovieApp</a>
+  <a class="navbar-brand my-n3" href="#">
+    <img
+      src="https://i.pinimg.com/originals/f3/a1/40/f3a140407b02589c18c6e35112177d34.jpg"
+      alt="MovieApp Logo"
+      style="width: 69px; height: auto"
+    />
+  </a>
   <button
     class="navbar-toggler"
     type="button"
@@ -12,7 +18,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto text-center">
       <li class="nav-item" *ngIf="!isLoggedIn">
         <a class="nav-link" routerLink="/auth/login">Login</a>
       </li>

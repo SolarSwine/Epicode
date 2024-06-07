@@ -1,4 +1,5 @@
 export interface iFavorite {
+  id: number;
   movieId: number;
-  id: string;
+  userId: string;
 }

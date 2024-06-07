@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../auth/auth.service';
-import { Subscription } from 'rxjs';
+import { Subscription, forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-profile-details',
@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 export class DetailsComponent implements OnInit, OnDestroy {
   user: any;
   favorites: any[] = [];
+  movies: any[] = [];
   userSubscription: Subscription | undefined;
 
   constructor(private http: HttpClient, private authService: AuthService) {}
@@ -22,6 +23,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
       } else {
         this.user = null;
         this.favorites = [];
+        this.movies = [];
       }
     });
   }
@@ -32,14 +34,13 @@ export class DetailsComponent implements OnInit, OnDestroy {
     }
   }
 
-
   loadFavorites(userId: string) {
     this.http.get<any[]>(`http://localhost:3000/favorites?userId=${userId}`).subscribe({
       next: (data) => {
         console.log('Favorites loaded:', data);
-        // Filter favorites based on user id
-        this.favorites = data.filter(fav => fav.id === parseInt(userId, 10));
-        this.loadFavoriteMovies(this.favorites);
+        this.favorites = data;
+        const uniqueMovieIds = [...new Set(this.favorites.map(fav => fav.movieId))];
+        this.loadMovies(uniqueMovieIds);
       },
       error: (error) => {
         console.error('Failed to load favorites:', error);
@@ -47,32 +48,41 @@ export class DetailsComponent implements OnInit, OnDestroy {
     });
   }
 
-  loadFavoriteMovies(favorites: any[]) {
-    const movieRequests = favorites.map(fav =>
-      this.http.get<any>(`http://localhost:3000/movies-popular/${fav.movieId}`).toPromise()
+  loadMovies(movieIds: number[]) {
+    const movieRequests = movieIds.map(movieId =>
+      this.http.get<any>(`http://localhost:3000/movies-popular/${movieId}`)
     );
 
-    Promise.all(movieRequests).then(movies => {
-      this.favorites = favorites.map((fav, index) => ({
-        ...fav,
-        movie: movies[index]
-      }));
-      console.log('Favorites with movies loaded:', this.favorites);
-    }).catch(error => {
-      console.error('Failed to load favorite movies:', error);
+    forkJoin(movieRequests).subscribe({
+      next: (movies) => {
+        console.log('Movies loaded:', movies);
+        const userFavoriteMovieIds = this.favorites.map(fav => fav.movieId);
+        this.movies = movies.filter(movie => userFavoriteMovieIds.includes(movie.id));
+      },
+      error: (error) => {
+        console.error('Failed to load movies:', error);
+      }
     });
   }
 
-  removeFromFavorites(favoriteId: number) {
-    this.http.delete(`http://localhost:3000/favorites/${favoriteId}`).subscribe({
+  removeFromFavorites(movieId: number) {
+    // Find all favorites with the corresponding movieId
+    const favoritesToRemove = this.favorites.filter(fav => fav.movieId === movieId);
+
+    // Create an array of delete requests for each favorite
+    const deleteRequests = favoritesToRemove.map(favorite =>
+      this.http.delete(`http://localhost:3000/favorites/${favorite.id}`)
+    );
+
+    forkJoin(deleteRequests).subscribe({
       next: () => {
-        console.log('Favorite removed:', favoriteId);
-        if (this.user) {
-          this.loadFavorites(this.user.id.toString());
-        }
+        console.log('Favorites removed:', favoritesToRemove.map(fav => fav.id));
+        // Remove the deleted favorites and associated movie from the local arrays
+        this.favorites = this.favorites.filter(fav => fav.movieId !== movieId);
+        this.movies = this.movies.filter(movie => movie.id !== movieId);
       },
       error: (error) => {
-        console.error('Failed to remove favorite:', error);
+        console.error('Failed to remove favorites:', error);
       }
     });
   }

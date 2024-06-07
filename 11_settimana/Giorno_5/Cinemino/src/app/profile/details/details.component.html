@@ -1,20 +1,33 @@
-<div>
-  <h2>Profile</h2>
-  <div *ngIf="user">
-    <p>Username: {{ user.nome }}</p>
-    <p>Email: {{ user.email }}</p>
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+    <div class="col-md-6">
+      <h2>Profile</h2>
+      <div *ngIf="user">
+        <p>Username: {{ user.nome }}</p>
+        <p>Email: {{ user.email }}</p>
+      </div>
+      <h3>Favorites</h3>
+      <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let movie of movies">
+          <div class="card">
+            <img
+              *ngIf="movie && movie.posterUrl"
+              [src]="movie.posterUrl"
+              [alt]="movie.title"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="removeFromFavorites(movie.id)"
+              >
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <h3>Favorites</h3>
-  <ul>
-    <li *ngFor="let favorite of favorites">
-      <img
-        [src]="favorite.movie?.posterUrl"
-        alt="{{ favorite.movie?.title }}"
-        width="50"
-        height="75"
-      />
-      <span>{{ favorite.movie?.title }}</span>
-      <button (click)="removeFromFavorites(favorite.id)">Remove</button>
-    </li>
-  </ul>
 </div>

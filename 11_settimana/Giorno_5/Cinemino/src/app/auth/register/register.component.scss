@@ -2,3 +2,31 @@
   color: red;
   margin-top: 10px;
 }
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+.btn {
+  border-radius: 5px;
+}
+
+.alert {
+  border-radius: 5px;
+}

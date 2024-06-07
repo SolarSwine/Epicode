@@ -1,8 +1,10 @@
+import { switchMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../auth/auth.service';
 import { iMovie } from '../../Models/i-movie';
 import { iFavorite } from '../../Models/i-favorite'; // Import the new interface
+import { EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-movie-list',
@@ -37,22 +39,49 @@ export class ListComponent implements OnInit {
     });
   }
 
+
   addToFavorites(movieId: number) {
-    if (!this.isFavorite(movieId)) {
-      this.authService.getUserId().subscribe(userId => {
+    // Check if the movie is already in favorites
+    const isAlreadyFavorite = this.isFavorite(movieId);
+
+    // If the movie is already a favorite, remove it; otherwise, add it
+    const action = isAlreadyFavorite ? 'remove' : 'add';
+
+    // Get the user ID
+    this.authService.getUserId().pipe(
+      switchMap(userId => {
+        // If userId exists, proceed
         if (userId) {
-          const favorite: iFavorite = { id: userId, movieId }; // Use the iFavorite interface
-          this.http.post('http://localhost:3000/favorites', favorite).subscribe(() => {
-            this.loadFavorites();
-          });
+          // If the action is to add, create a new favorite; otherwise, find and remove the favorite
+          if (action === 'add') {
+            const favorite = { userId, movieId };
+            return this.http.post('http://localhost:3000/favorites', favorite);
+          } else {
+            // Find the favorite by movieId and userId and remove it
+            const favoriteToRemove = this.favorites.find(fav => fav.userId === userId && fav.movieId === movieId);
+            if (favoriteToRemove) {
+              return this.http.delete(`http://localhost:3000/favorites/${favoriteToRemove.id}`);
+            } else {
+              console.error('Favorite not found for removal.');
+              return EMPTY;
+            }
+          }
+        } else {
+          // Handle the case where userId is null or undefined
+          console.error('User ID is null or undefined.');
+          return EMPTY;
         }
-      });
-    } else {
-      console.log('Movie already exists in favorites for the current user.');
-    }
+      })
+    ).subscribe(() => {
+      // After successfully adding or removing the favorite, reload the favorites list
+      this.loadFavorites();
+    }, error => {
+      // Handle errors from the HTTP request
+      console.error('Error:', error);
+    });
   }
 
   isFavorite(movieId: number): boolean {
-    return this.favorites.some(fav => fav.id === this.userId && fav.movieId === movieId);
+    return this.favorites.some(fav => fav.userId === this.userId && fav.movieId === movieId);
   }
 }

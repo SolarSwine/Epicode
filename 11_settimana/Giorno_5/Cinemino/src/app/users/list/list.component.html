@@ -1,10 +1,13 @@
-<div>
-  <h2>Users</h2>
-  <ul>
-    <li *ngFor="let user of users">
-      <p>Nome: {{ user.nome }}</p>
-      <p>Email: {{ user.email }}</p>
-      <p>Password: {{ user.password }}</p>
-    </li>
-  </ul>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-4 mb-4" *ngFor="let user of users">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Nome: {{ user.nome }}</h5>
+          <p class="card-text">Email: {{ user.email }}</p>
+          <p class="card-text">Password: {{ user.password }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
