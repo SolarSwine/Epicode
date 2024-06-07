@@ -84,13 +84,10 @@ export class AuthService {
 
   }
 
-  getUserId(): string | null {
-    const token = this.getToken();
-    if (token) {
-      const decodedToken = this.jwtHelper.decodeToken(token);
-      return decodedToken ? decodedToken.userId : null;
-    }
-    return null;
+  getUserId(): Observable<string | null> {
+    return this.user$.pipe(
+      map(user => user ? user.id.toString() : null)
+    );
   }
 
   // Metodo per ottenere il token di accesso dal local storage

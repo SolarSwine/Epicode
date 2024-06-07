@@ -8,12 +8,12 @@
   <ul>
     <li *ngFor="let favorite of favorites">
       <img
-        [src]="favorite.movie.posterUrl"
-        alt="{{ favorite.movie.title }}"
+        [src]="favorite.movie?.posterUrl"
+        alt="{{ favorite.movie?.title }}"
         width="50"
         height="75"
       />
-      <span>{{ favorite.movie.title }}</span>
+      <span>{{ favorite.movie?.title }}</span>
       <button (click)="removeFromFavorites(favorite.id)">Remove</button>
     </li>
   </ul>
